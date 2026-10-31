@@ -1,0 +1,416 @@
+[
+  {
+    "path": "branding/logo-ioio.png",
+    "pixels": [
+      735,
+      612
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "branding/logo-ioio-fundo-claro.png",
+    "pixels": [
+      705,
+      567
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/abelha-01.png",
+    "pixels": [
+      306,
+      366
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/abelha-02.png",
+    "pixels": [
+      312,
+      363
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/girassol.png",
+    "pixels": [
+      291,
+      363
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/folhas.png",
+    "pixels": [
+      255,
+      366
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/coracoes.png",
+    "pixels": [
+      264,
+      363
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/trilho-coracao.png",
+    "pixels": [
+      303,
+      366
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/icon-bolo.png",
+    "pixels": [
+      270,
+      249
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/icon-docinho.png",
+    "pixels": [
+      276,
+      249
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/icon-salgado.png",
+    "pixels": [
+      303,
+      249
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/icon-ingredientes.png",
+    "pixels": [
+      291,
+      231
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/icon-artesanal.png",
+    "pixels": [
+      285,
+      234
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/icon-especial.png",
+    "pixels": [
+      312,
+      231
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "bolos/banner-hero.jpg",
+    "pixels": [
+      916,
+      364
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "bolos/banner-cta.jpg",
+    "pixels": [
+      704,
+      354
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "bolos/banner-historia.jpg",
+    "pixels": [
+      544,
+      356
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/fundo-rosa.jpg",
+    "pixels": [
+      370,
+      320
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/fundo-creme.jpg",
+    "pixels": [
+      380,
+      320
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "bolos/categoria-bolos-caseiros.jpg",
+    "pixels": [
+      424,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "bolos/categoria-bolos-decorados.jpg",
+    "pixels": [
+      426,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "docinhos/categoria-docinhos.jpg",
+    "pixels": [
+      428,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "salgados/categoria-salgados.jpg",
+    "pixels": [
+      424,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "bolos/bolo-morango.jpg",
+    "pixels": [
+      290,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "bolos/bolo-marmore.jpg",
+    "pixels": [
+      286,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "docinhos/brigadeiro.jpg",
+    "pixels": [
+      294,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "salgados/salgadinho.jpg",
+    "pixels": [
+      280,
+      284
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/passo-escolha.png",
+    "pixels": [
+      432,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/passo-data.png",
+    "pixels": [
+      426,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/passo-pagamento.png",
+    "pixels": [
+      417,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/passo-retirada.png",
+    "pixels": [
+      417,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/banner-contato.png",
+    "pixels": [
+      1734,
+      303
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/whatsapp.png",
+    "pixels": [
+      219,
+      186
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/instagram.png",
+    "pixels": [
+      225,
+      186
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/telefone.png",
+    "pixels": [
+      207,
+      186
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/localizacao.png",
+    "pixels": [
+      213,
+      186
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "icons/email.png",
+    "pixels": [
+      207,
+      186
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/folha-01.png",
+    "pixels": [
+      282,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/folha-02.png",
+    "pixels": [
+      294,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/flor-01.png",
+    "pixels": [
+      261,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/flor-02.png",
+    "pixels": [
+      252,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/petala.png",
+    "pixels": [
+      249,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/folha-solta.png",
+    "pixels": [
+      378,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/morango.png",
+    "pixels": [
+      300,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "decoracoes/chantilly.png",
+    "pixels": [
+      324,
+      222
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  },
+  {
+    "path": "branding/favicon.png",
+    "pixels": [
+      186,
+      204
+    ],
+    "origem": "recorte ampliado da prancha 1536×1024",
+    "transparencia_real": false
+  }
+]

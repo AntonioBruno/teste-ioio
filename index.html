@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bolos + Delícias da Ioiô | Bolos, docinhos e salgados artesanais</title>
+  <meta name="description" content="Bolos caseiros, bolos decorados, docinhos e salgados artesanais feitos com carinho. Faça sua encomenda pelo WhatsApp." />
+  <meta name="theme-color" content="#EF4772" />
+  <!-- PROVISÓRIO: favicon derivado do girassol do pacote. Substituir pelo ícone oficial da marca. -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/branding/favicon-32.png" />
+  <link rel="apple-touch-icon" href="./assets/branding/favicon-180.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Ícones de interface (SVG inline, herdam a cor do texto via currentColor) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.6 20.4l1.2-4.3A8.6 8.6 0 1 1 8 19.3z"/><path fill="currentColor" d="M9.1 7.6c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.6 2 2.9 2.5.2.1.4.1.5-.1l.6-.8c.2-.2.4-.2.6-.1l1.7.8c.2.1.3.2.3.4 0 .5-.2 1.3-.8 1.7-.6.4-1.6.6-3 0-1.6-.6-3.4-2.2-4.2-3.6-.8-1.3-.8-2.4-.4-3.2z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-cake" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 20h16M5 20v-6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6M5 15.5c1.2 1 2.3 1 3.5 0s2.3-1 3.5 0 2.3 1 3.5 0 2.3-1 3.5 0M12 12V8.5"/><path fill="currentColor" d="M12 4c.9 1 1.2 1.8.6 2.5-.3.4-.9.4-1.2 0-.6-.7-.3-1.5.6-2.5z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.6 3.8 4.5 7 4.5c2 0 3.6 1.2 5 3 1.4-1.8 3-3 5-3 3.2 0 5.4 3.1 4.2 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 7.5V12l3 2"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Faixa exibida somente com CONFIG.modoValidacao = true (ver js/config.js) -->
+  <div class="test-ribbon" id="test-ribbon" role="note" hidden>
+    <strong>Ambiente de validação.</strong> Preços, sinal e QR Code são fictícios e servem apenas para testar o site.
+  </div>
+
+  <!-- ========== 1. CABEÇALHO ========== -->
+  <header class="site-header" id="topo">
+    <div class="container site-header__inner">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+
+      <a class="brand" href="#inicio" aria-label="Bolos + Delícias da Ioiô — página inicial">
+        <!-- PROVISÓRIO: recorte tratado do logo (sem SVG/PNG original). -->
+        <img src="./assets/branding/logo-ioio-web.png" alt="Bolos + Delícias da Ioiô — Gratidão por ter você como cliente" width="635" height="515" />
+      </a>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <ul class="main-nav__list">
+          <li><a href="#inicio" class="is-active">Início</a></li>
+          <li><a href="#catalogo" data-filter="bolos">Nossos bolos</a></li>
+          <li><a href="#catalogo" data-filter="docinhos">Docinhos</a></li>
+          <li><a href="#catalogo" data-filter="salgados">Salgados</a></li>
+          <li><a href="#encomendas">Encomendas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn--primary main-nav__cta-mobile" data-whatsapp="geral" href="#contato" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Falar no WhatsApp
+        </a>
+      </nav>
+
+      <a class="btn btn--primary header-cta" data-whatsapp="geral" href="#contato" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+        <span>Fazer encomenda</span>
+      </a>
+      <a class="header-wa-mobile" data-whatsapp="geral" href="#contato" target="_blank" rel="noopener" aria-label="Fazer encomenda pelo WhatsApp">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- ========== 2. HERO ========== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <!-- PROVISÓRIO: foto ilustrativa ampliada (916×364). Substituir por foto real autorizada ≥ 1920px. -->
+        <img src="./assets/bolos/banner-hero.jpg" alt="Bolo artesanal com cobertura de chantilly e morangos frescos" width="916" height="364" fetchpriority="high" />
+      </div>
+      <img class="deco hero__bee" src="./assets/decoracoes/abelha-02-web.png" alt="" aria-hidden="true" width="281" height="331" />
+      <img class="deco hero__leaf" src="./assets/decoracoes/folhas-web.png" alt="" aria-hidden="true" width="215" height="315" />
+
+      <div class="container hero__content">
+        <p class="eyebrow"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-heart"></use></svg> Feito com carinho, para você <svg class="icon icon--xs" aria-hidden="true"><use href="#i-heart"></use></svg></p>
+        <h1 id="hero-title">Um toque de <em>sabor</em> em cada delícia <svg class="icon icon--heart" aria-hidden="true"><use href="#i-heart"></use></svg></h1>
+        <p class="hero__lead">Bolos caseiros, bolos decorados, docinhos e salgados preparados com ingredientes selecionados para deixar seus momentos ainda mais especiais.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#catalogo">
+            <svg class="icon" aria-hidden="true"><use href="#i-cake"></use></svg> Ver nosso cardápio
+          </a>
+          <a class="btn btn--outline" data-whatsapp="geral" href="#contato" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Encomendar pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 3. DIFERENCIAIS ========== -->
+    <section class="benefits" aria-label="Diferenciais da confeitaria">
+      <div class="container">
+        <ul class="benefits__list">
+          <li class="benefit">
+            <img src="./assets/icons/icon-bolo-web.png" alt="" aria-hidden="true" width="137" height="155" />
+            <div><h2 class="benefit__title">Feito artesanalmente</h2><p>Receitas com amor e tradição</p></div>
+          </li>
+          <li class="benefit">
+            <img src="./assets/icons/icon-ingredientes-web.png" alt="" aria-hidden="true" width="164" height="147" />
+            <div><h2 class="benefit__title">Ingredientes selecionados</h2><p>Qualidade em cada detalhe</p></div>
+          </li>
+          <li class="benefit">
+            <img src="./assets/icons/icon-artesanal-web.png" alt="" aria-hidden="true" width="167" height="143" />
+            <div><h2 class="benefit__title">Cada pedido é especial</h2><p>Pensado especialmente para você</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 4. CATÁLOGO ========== -->
+    <section class="section catalog" id="catalogo" aria-labelledby="catalogo-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="catalogo-title" class="section-title"><span class="heart" aria-hidden="true">♥</span> Nossas delícias <span class="heart" aria-hidden="true">♥</span></h2>
+          <div class="divider" aria-hidden="true">
+            <img src="./assets/decoracoes/folha-02-web.png" alt="" class="divider__leaf divider__leaf--l" />
+            <img src="./assets/decoracoes/girassol-web.png" alt="" class="divider__sun" />
+            <img src="./assets/decoracoes/folha-02-web.png" alt="" class="divider__leaf" />
+          </div>
+        </header>
+
+        <!-- Categorias (conforme layout v2.0). "Conhecer opções" filtra a lista de produtos abaixo. -->
+        <ul class="category-grid">
+          <li>
+            <article class="category-card">
+              <img src="./assets/bolos/categoria-bolos-caseiros.jpg" alt="Bolo caseiro com uma fatia cortada" width="424" height="284" loading="lazy" />
+              <div class="category-card__body">
+                <h3>Bolos caseiros</h3>
+                <p>Sabor e tradição em cada fatia.</p>
+                <button class="btn btn--primary btn--sm" type="button" data-category="bolos-caseiros" aria-controls="produtos">Conhecer opções <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+              </div>
+              <svg class="category-card__chevron icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <img src="./assets/bolos/categoria-bolos-decorados.jpg" alt="Bolo decorado com chantilly e morangos" width="426" height="284" loading="lazy" />
+              <div class="category-card__body">
+                <h3>Bolos decorados</h3>
+                <p>Deixe seu momento ainda mais especial.</p>
+                <button class="btn btn--primary btn--sm" type="button" data-category="bolos-decorados" aria-controls="produtos">Conhecer opções <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+              </div>
+              <svg class="category-card__chevron icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <img src="./assets/docinhos/categoria-docinhos.jpg" alt="Docinhos e brigadeiros sortidos em forminhas" width="428" height="284" loading="lazy" />
+              <div class="category-card__body">
+                <h3>Docinhos e sobremesas</h3>
+                <p>Pequenos detalhes que adoçam a vida.</p>
+                <button class="btn btn--primary btn--sm" type="button" data-category="docinhos" aria-controls="produtos">Conhecer opções <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+              </div>
+              <svg class="category-card__chevron icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+            </article>
+          </li>
+          <li>
+            <article class="category-card">
+              <img src="./assets/salgados/categoria-salgados.jpg" alt="Salgadinhos assados sortidos" width="424" height="284" loading="lazy" />
+              <div class="category-card__body">
+                <h3>Salgados</h3>
+                <p>Sabor e praticidade para sua ocasião.</p>
+                <button class="btn btn--primary btn--sm" type="button" data-category="salgados" aria-controls="produtos">Conhecer opções <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+              </div>
+              <svg class="category-card__chevron icon" aria-hidden="true"><use href="#i-chevron"></use></svg>
+            </article>
+          </li>
+        </ul>
+
+        <!-- Lista de produtos selecionáveis (renderizada por js/catalog.js) -->
+        <div class="products" id="produtos" tabindex="-1">
+          <div class="products__head">
+            <h3 class="products__title" id="produtos-title">Escolha seus produtos</h3>
+            <div class="filters" role="group" aria-label="Filtrar produtos por categoria">
+              <button type="button" class="chip is-active" data-filter="todos" aria-pressed="true">Todos</button>
+              <button type="button" class="chip" data-filter="bolos" aria-pressed="false">Bolos</button>
+              <button type="button" class="chip" data-filter="docinhos" aria-pressed="false">Docinhos</button>
+              <button type="button" class="chip" data-filter="salgados" aria-pressed="false">Salgados</button>
+            </div>
+          </div>
+          <p class="products__note">Cardápio em montagem: sabores, tamanhos e valores são confirmados pela Ioiô no orçamento.</p>
+          <ul class="product-grid" id="product-grid" aria-live="polite"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. INSTITUCIONAL ========== -->
+    <section class="about" id="sobre" aria-labelledby="sobre-title">
+      <div class="about__media">
+        <!-- PROVISÓRIO: foto ilustrativa. Ideal: foto real da Ioiô preparando um bolo (com autorização de uso de imagem). -->
+        <img src="./assets/bolos/banner-historia.jpg" alt="Mãos finalizando um bolo com morangos frescos" width="544" height="356" loading="lazy" />
+      </div>
+      <div class="about__content">
+        <img class="deco about__bee" src="./assets/decoracoes/abelha-01-web.png" alt="" aria-hidden="true" />
+        <img class="deco about__sun" src="./assets/decoracoes/girassol-web.png" alt="" aria-hidden="true" />
+        <p class="eyebrow eyebrow--small"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-heart"></use></svg> Sobre a Ioiô</p>
+        <h2 id="sobre-title">Mais que bolos,<br />são momentos especiais</h2>
+        <!-- PENDENTE: texto do layout v2.0 — validar a história com a cliente. -->
+        <p>A Bolos + Delícias da Ioiô nasceu do amor pela confeitaria e pela vontade de tornar os momentos da vida mais doces. Cada receita é feita com carinho, ingredientes selecionados e muito cuidado em cada detalhe.</p>
+        <a class="btn btn--primary btn--sm" href="#encomendas">Fazer minha encomenda <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+      </div>
+    </section>
+
+    <!-- Faixa de chamada (CTA) -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-band__inner">
+        <h2 id="cta-title">Vamos adoçar seu próximo momento?</h2>
+        <p>Faça sua encomenda pelo WhatsApp e garanta o seu!</p>
+        <a class="btn btn--primary" data-whatsapp="geral" href="#contato" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Fale com a Ioiô
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== 7. ETAPAS DO PEDIDO ========== -->
+    <section class="section steps" id="como-funciona" aria-labelledby="steps-title">
+      <div class="container">
+        <h2 id="steps-title" class="section-title section-title--sm"><span class="heart" aria-hidden="true">♥</span> Como funciona a sua encomenda <span class="heart" aria-hidden="true">♥</span></h2>
+        <ol class="steps__list">
+          <li class="step">
+            <img src="./assets/icons/passo-escolha-web.png" alt="" aria-hidden="true" />
+            <h3><span class="step__n">1</span> Escolha o produto</h3>
+            <p>Bolo, docinhos ou salgados</p>
+          </li>
+          <li class="step">
+            <img src="./assets/icons/passo-data-web.png" alt="" aria-hidden="true" />
+            <h3><span class="step__n">2</span> Informe a data</h3>
+            <p>Nos envie quando precisa</p>
+          </li>
+          <li class="step">
+            <img src="./assets/icons/passo-pagamento-web.png" alt="" aria-hidden="true" />
+            <h3><span class="step__n">3</span> Pague o sinal</h3>
+            <p>Via Pix (QR Code), após a confirmação do orçamento</p>
+          </li>
+          <li class="step">
+            <img src="./assets/icons/passo-retirada-web.png" alt="" aria-hidden="true" />
+            <h3><span class="step__n">4</span> Retire ou receba</h3>
+            <p>Combinamos a melhor forma</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== 6. ENCOMENDAS ========== -->
+    <section class="section order" id="encomendas" aria-labelledby="encomendas-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="encomendas-title" class="section-title"><span class="heart" aria-hidden="true">♥</span> Faça sua encomenda <span class="heart" aria-hidden="true">♥</span></h2>
+          <p class="section-sub">Monte seu pedido, envie pelo WhatsApp e aguarde a confirmação do orçamento pela Ioiô.</p>
+        </header>
+
+        <div class="order__layout">
+          <form class="order-form" id="order-form" novalidate>
+            <!-- Etapa 1: itens -->
+            <fieldset class="card fieldset">
+              <legend><span class="fieldset__n">1</span> Itens do pedido</legend>
+              <ul class="cart" id="cart" aria-live="polite"></ul>
+              <p class="cart__empty" id="cart-empty">Nenhum produto selecionado ainda. <a href="#produtos">Escolha no cardápio</a> ou adicione abaixo.</p>
+              <div class="quick-add">
+                <label for="quick-add-select" class="sr-only">Adicionar produto</label>
+                <select id="quick-add-select"></select>
+                <button type="button" class="btn btn--outline btn--sm" id="quick-add-btn"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plus"></use></svg> Adicionar</button>
+              </div>
+              <p class="field-error" id="cart-error" role="alert" hidden>Adicione pelo menos um produto ao pedido.</p>
+            </fieldset>
+
+            <!-- Etapa 2: dados -->
+            <fieldset class="card fieldset">
+              <legend><span class="fieldset__n">2</span> Seus dados</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-nome">Nome completo <span aria-hidden="true">*</span></label>
+                  <input id="f-nome" name="nome" type="text" autocomplete="name" required minlength="3" aria-describedby="f-nome-err" />
+                  <p class="field-error" id="f-nome-err" hidden>Informe seu nome.</p>
+                </div>
+                <div class="field">
+                  <label for="f-telefone">WhatsApp <span aria-hidden="true">*</span></label>
+                  <input id="f-telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 90000-0000" required aria-describedby="f-telefone-err" />
+                  <p class="field-error" id="f-telefone-err" hidden>Informe um número com DDD.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Etapa 3: data e entrega -->
+            <fieldset class="card fieldset">
+              <legend><span class="fieldset__n">3</span> Data e forma de recebimento</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-data">Data desejada <span aria-hidden="true">*</span></label>
+                  <input id="f-data" name="data" type="date" required aria-describedby="f-data-hint f-data-err" />
+                  <p class="field-hint" id="f-data-hint">A disponibilidade da data é confirmada pela Ioiô.</p>
+                  <p class="field-error" id="f-data-err" hidden>Escolha uma data a partir de amanhã.</p>
+                </div>
+                <div class="field">
+                  <label for="f-horario">Horário de preferência</label>
+                  <select id="f-horario" name="horario">
+                    <option value="">Sem preferência</option>
+                    <option>Manhã</option>
+                    <option>Tarde</option>
+                    <option>Noite</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <span class="field-label" id="recebimento-label">Como prefere receber? <span aria-hidden="true">*</span></span>
+                <div class="radio-group" role="radiogroup" aria-labelledby="recebimento-label">
+                  <label class="radio-card"><input type="radio" name="recebimento" value="retirada" checked /> <span>Retirada</span></label>
+                  <label class="radio-card"><input type="radio" name="recebimento" value="entrega" /> <span>Entrega <small>(taxa e região a combinar)</small></span></label>
+                </div>
+              </div>
+              <div class="field" id="endereco-field" hidden>
+                <label for="f-endereco">Endereço de entrega <span aria-hidden="true">*</span></label>
+                <input id="f-endereco" name="endereco" type="text" autocomplete="street-address" placeholder="Rua, número, bairro e cidade" aria-describedby="f-endereco-err" />
+                <p class="field-error" id="f-endereco-err" hidden>Informe o endereço para entrega.</p>
+              </div>
+            </fieldset>
+
+            <!-- Etapa 4: observações -->
+            <fieldset class="card fieldset">
+              <legend><span class="fieldset__n">4</span> Detalhes do pedido</legend>
+              <div class="field">
+                <label for="f-obs">Sabores, tamanho, tema da decoração, restrições alimentares…</label>
+                <textarea id="f-obs" name="observacoes" rows="4" maxlength="800"></textarea>
+              </div>
+              <p class="privacy-note">Seus dados não ficam salvos neste site: eles seguem apenas na mensagem enviada por você no WhatsApp.</p>
+            </fieldset>
+          </form>
+
+          <!-- Resumo + pagamento -->
+          <aside class="order__aside" aria-label="Resumo do pedido">
+            <div class="card summary" id="summary">
+              <h3>Resumo do pedido</h3>
+              <ul class="summary__items" id="summary-items"></ul>
+              <dl class="summary__totals">
+                <div><dt>Total estimado</dt><dd id="sum-total">—</dd></div>
+                <div><dt id="sum-sinal-label">Sinal</dt><dd id="sum-sinal">—</dd></div>
+                <div><dt>Saldo restante</dt><dd id="sum-saldo">—</dd></div>
+              </dl>
+              <p class="summary__note" id="summary-note" aria-live="polite"></p>
+              <button type="submit" form="order-form" class="btn btn--primary btn--block" id="send-order">
+                <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Enviar pedido pelo WhatsApp
+              </button>
+              <p class="summary__fine">O valor final, o sinal e a data são confirmados pela Ioiô antes de qualquer pagamento.</p>
+            </div>
+
+            <!-- Etapa de pagamento: aparece só depois do envio do pedido -->
+            <div class="card payment" id="payment" hidden tabindex="-1">
+              <h3>Pagamento do sinal</h3>
+              <p class="payment__code">Pedido <strong id="order-code">—</strong></p>
+              <details class="payment__preview">
+                <summary>Ver mensagem enviada</summary>
+                <pre id="message-preview"></pre>
+                <button type="button" class="btn btn--outline btn--sm" id="copy-message">Copiar mensagem</button>
+              </details>
+
+              <label class="confirm-check">
+                <input type="checkbox" id="budget-confirmed" />
+                <span>A Ioiô já me confirmou o orçamento e a data pelo WhatsApp.</span>
+              </label>
+
+              <div class="pix" id="pix-area" hidden>
+                <div class="pix__qr" id="pix-qr"></div>
+                <div class="pix__info">
+                  <p>Pague o <strong>sinal</strong> no valor confirmado pela Ioiô no WhatsApp<span id="pix-valor-ref"></span>.</p>
+                  <ol>
+                    <li>Abra o app do seu banco e escolha <em>Pix › Ler QR Code</em>.</li>
+                    <li>Confira o nome do recebedor antes de pagar.</li>
+                    <li>Envie o comprovante pelo WhatsApp com o código do pedido.</li>
+                  </ol>
+                  <a class="btn btn--primary btn--sm" id="send-receipt" href="#" target="_blank" rel="noopener">
+                    <svg class="icon icon--sm" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Enviar comprovante
+                  </a>
+                </div>
+                <p class="status-badge" role="status">
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg>
+                  Pagamento aguardando conferência manual da Ioiô
+                </p>
+                <p class="pix__fine">Este site não confirma pagamentos. O sinal só é considerado recebido depois que a Ioiô conferir o extrato e responder pelo WhatsApp.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos: previsto no layout v2.0, mas oculto até haver depoimentos REAIS autorizados
+         (preencher CONFIG.depoimentos em js/config.js). Nenhuma avaliação é inventada. -->
+    <section class="section testimonials" id="depoimentos" aria-labelledby="depoimentos-title" hidden>
+      <div class="container">
+        <h2 id="depoimentos-title" class="section-title section-title--sm"><span class="heart" aria-hidden="true">♥</span> O que nossos clientes dizem <span class="heart" aria-hidden="true">♥</span></h2>
+        <ul class="testimonials__list" id="testimonials-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== 8. CONTATO E RODAPÉ ========== -->
+  <footer class="site-footer" id="contato" aria-labelledby="contato-title">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <img src="./assets/branding/logo-ioio-web.png" alt="Bolos + Delícias da Ioiô" width="635" height="515" loading="lazy" />
+      </div>
+
+      <nav aria-label="Navegação do rodapé">
+        <h2 class="footer-title">Navegação</h2>
+        <ul class="footer-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#catalogo" data-filter="bolos">Nossos bolos</a></li>
+          <li><a href="#catalogo" data-filter="docinhos">Docinhos</a></li>
+          <li><a href="#catalogo" data-filter="salgados">Salgados</a></li>
+          <li><a href="#encomendas">Encomendas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-title" id="contato-title">Contato</h2>
+        <!-- PENDENTE: dados vindos do layout v2.0 — confirmar com a cliente (js/config.js) -->
+        <ul class="contact-list">
+          <li><img src="./assets/icons/whatsapp-web.png" alt="" aria-hidden="true" /><a data-whatsapp="geral" data-fill="telefone" href="#contato" target="_blank" rel="noopener">—</a></li>
+          <li><img src="./assets/icons/localizacao-web.png" alt="" aria-hidden="true" /><span><span data-fill="cidade">—</span><br /><small>(Atendimento mediante WhatsApp)</small></span></li>
+          <li><img src="./assets/icons/instagram-web.png" alt="" aria-hidden="true" /><a data-fill="instagram" href="#contato" target="_blank" rel="noopener">—</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Receba novidades</h2>
+        <p>Chame a Ioiô no WhatsApp e peça para receber novidades e datas disponíveis.</p>
+        <a class="btn btn--primary btn--sm" data-whatsapp="novidades" href="#contato" target="_blank" rel="noopener">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Quero receber
+        </a>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>© <span id="year">2026</span> Bolos + Delícias da Ioiô. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
